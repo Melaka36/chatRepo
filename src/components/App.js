@@ -2,7 +2,7 @@ import React from "react"
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import {auth} from "../firebase"
-// import { AuthProvider } from "../contexts/AuthContext"
+import { AuthProvider } from "../context/AuthContext"
 
 import Chats from "./Chats"
 import Login from "./Login"
@@ -12,7 +12,7 @@ function App() {
   return (
     <div style={{ fontFamily: "Avenir" }}>
       <Router>
-        {/* <AuthProvider> */}
+        <AuthProvider>
         <Routes>
         <Route path="/" >
         <Route path="chats" element={<Chats/>} />
@@ -21,7 +21,7 @@ function App() {
           
         </Route>
         </Routes>
-        {/* </AuthProvider> */}
+        </AuthProvider>
       </Router>
     </div>
   );
